@@ -3,8 +3,8 @@ package pl.sdacademy.java.basic.exercises.day1;
 import java.util.Scanner;
 
 public class Task4 {
-    final static float BMIlowerLimit = 18.5f;
-    final static float BMIhigherLimit = 24.9f;
+    final static float BMI_LOWER_LIMIT = 18.5f;
+    final static float BMI_HIGHER_LIMIT = 24.9f;
     public static void main(String[] args) {
 
         System.out.println("Please insert weight in kg: ");
@@ -13,8 +13,8 @@ public class Task4 {
         System.out.println("Please insert height in cm: ");
         int height = scanner.nextInt();
         float heightCM = (float) height/100;
-        BMICalculate(weight,heightCM);
-        BMIdisplay(BMICalculate(weight,heightCM));
+        float bmi = BMICalculate(weight,heightCM);
+        BMIdisplay(bmi);
     }
     public static float BMICalculate(float weight, float heightCM){
 
@@ -22,7 +22,7 @@ public class Task4 {
     }
     public static void BMIdisplay(float BMI){
         System.out.println(BMI);
-        if(BMI >= BMIlowerLimit && BMI <=BMIhigherLimit){
+        if(BMI >= BMI_LOWER_LIMIT && BMI <=BMI_HIGHER_LIMIT){
             System.out.println("BMI is correct!");
         }
         else{
