@@ -5,15 +5,24 @@ import java.util.Scanner;
 public class Task9day2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        String input;
+        String longestInput = "";
 
-
-        if(input.equals("Enough")){
-            System.out.println("Result: ");
-        }
-        else {
-            System.out.println("Please insert your text: ");
+        while(true) {
+            System.out.print("Please insert your text: ");
             input = scanner.nextLine();
+
+            if(input.isBlank()){
+                System.out.println("no input");
+            }
+            else if(input.equals("Enough")){
+                break;
+            }
+
+            if(input.length() > longestInput.length()){
+                longestInput = input;
+            }
         }
+        System.out.println(longestInput);
     }
 }
